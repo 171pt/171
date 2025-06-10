@@ -12,18 +12,23 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      overflow: hidden;
     }
 
     img {
       max-width: 100%;
       max-height: 100%;
-      transform: scale(0.8);
-      animation: zoomIn 2s ease forwards;
+      animation: zoomIn 2s ease-out forwards;
     }
 
     @keyframes zoomIn {
-      to {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      100% {
         transform: scale(1);
+        opacity: 1;
       }
     }
   </style>
