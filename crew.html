@@ -36,14 +36,12 @@
       color: #64419c;
       text-shadow: 0 0 20px #64419c80;
       margin-bottom: 10px;
-      transition-delay: 0s;
     }
 
     p {
       font-family: "Iceberg", sans-serif;
       font-size: 1.5rem;
       color: #64419c;
-      transition-delay: 1.5s;
     }
   </style>
 </head>
@@ -53,12 +51,18 @@
 
   <script>
     window.addEventListener('load', () => {
-      const elements = document.querySelectorAll('.zoom-element');
-      elements.forEach(element => {
+      const title = document.querySelector('h1.zoom-element');
+      const text = document.querySelector('p.zoom-element');
+      
+      // Show 171 first
+      setTimeout(() => {
+        title.classList.add('show');
+        
+        // Show teste after 1.5 seconds
         setTimeout(() => {
-          element.classList.add('show');
-        }, 100);
-      });
+          text.classList.add('show');
+        }, 1500);
+      }, 100);
     });
   </script>
 </body>
