@@ -47,21 +47,23 @@
 </head>
 <body>
   <h1 class="zoom-element">171</h1>
-  <p class="zoom-element">teste</p>
-
+  <p class="zoom-element">danizzi</p>
+  <p class="zoom-element">oraciobatechapas</p>
+  <p class="zoom-element">tba</p>
+  <p class="zoom-element">tba</p>
   <script>
     window.addEventListener('load', () => {
       const title = document.querySelector('h1.zoom-element');
-      const text = document.querySelector('p.zoom-element');
+      const texts = document.querySelectorAll('p.zoom-element');
       
-      // Show 171 first
       setTimeout(() => {
         title.classList.add('show');
         
-        // Show teste after 1.5 seconds
-        setTimeout(() => {
-          text.classList.add('show');
-        }, 1500);
+        texts.forEach((text, index) => {
+          setTimeout(() => {
+            text.classList.add('show');
+          }, 1000 + (index * 500)); // Each text appears 500ms after the previous one
+        });
       }, 100);
     });
   </script>
