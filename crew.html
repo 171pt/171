@@ -19,23 +19,47 @@
       text-align: center;
     }
 
+    .zoom-element {
+      transform: scale(0.2);
+      opacity: 0;
+      transition: transform 1.5s ease, opacity 1.5s ease;
+    }
+
+    .zoom-element.show {
+      transform: scale(1);
+      opacity: 1;
+    }
+
     h1 {
       font-family: 'New Rocker', system-ui;
       font-size: 5rem;
       color: #64419c;
       text-shadow: 0 0 20px #64419c80;
       margin-bottom: 10px;
+      transition-delay: 0s;
     }
 
     p {
       font-family: "Iceberg", sans-serif;
       font-size: 1.5rem;
       color: #64419c;
+      transition-delay: 1.5s;
     }
   </style>
 </head>
 <body>
-  <h1>171</h1>
-  <p>teste</p>
+  <h1 class="zoom-element">171</h1>
+  <p class="zoom-element">teste</p>
+
+  <script>
+    window.addEventListener('load', () => {
+      const elements = document.querySelectorAll('.zoom-element');
+      elements.forEach(element => {
+        setTimeout(() => {
+          element.classList.add('show');
+        }, 100);
+      });
+    });
+  </script>
 </body>
 </html>
